@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <script type="text/javascript" src="http://fast.fonts.net/jsapi/d200305d-8416-404a-a388-46e78638340d.js"></script>
+        <?php include_once('google-analytics.php'); ?>
     </head>
     <body>
         <!--[if lt IE 7]>
