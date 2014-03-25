@@ -28,12 +28,11 @@
         <!-- Add your site or application content here -->
         <article class="wrapper">
             <h1>Modular Scale Calculator</h1>
-
             <form method="post" action="index.php">
                 <fieldset>
                     <legend>Calculator</legend>
-                    <p><label for="base">Base Figure</label> <input id="base" name="base" type="number" value="<?php echo $base; ?>"></p>
-                    <p><label for="alt">Important Figure</label> <input id="alt" name="alt" type="number" value="<?php echo $alt; ?>"></p>
+                    <p><label for="base">Base Figure</label> <input id="base" name="base" type="text" value="<?php echo $base; ?>"></p>
+                    <p><label for="alt">Important Figure</label> <input id="alt" name="alt" type="text" value="<?php echo $alt; ?>"></p>
                     <p>
                         <label for="ratio">Ratio</label>
                         <select id="ratio" name="ratio">
@@ -42,7 +41,7 @@
                             <option value="1.2" <?php if($ratio == 1.2) echo "selected" ?>>5:6&#8201;&ndash;&#8201;minor third</option>
                             <option value="1.25" <?php if($ratio == 1.25) echo "selected" ?>>4:5&#8201;&ndash;&#8201;major third</option>
                             <option value="1.333" <?php if($ratio == 1.333) echo "selected" ?>>3:4&#8201;&ndash;&#8201;perfect fourth</option>
-                            <option value="1.414" <?php if($ratio == 1.414) echo "selected" ?>>1:?2&#8201;&ndash;&#8201;aug. fourth / dim. fifth</option>
+                            <option value="1.414" <?php if($ratio == 1.414) echo "selected" ?>>1:&radic;2&#8201;&ndash;&#8201;aug. fourth / dim. fifth</option>
                             <option value="1.5" <?php if($ratio == 1.5) echo "selected" ?>>2:3&#8201;&ndash;&#8201;perfect fifth</option>
                             <option value="1.6" <?php if($ratio == 1.6) echo "selected" ?>>5:8&#8201;&ndash;&#8201;minor sixth</option>
                             <option value="1.618" <?php if($ratio == 1.618) echo "selected" ?>>1:1.618&#8201;&ndash;&#8201;golden section</option>
@@ -70,7 +69,7 @@
                                 }
                                 $output .= '>'.$row[0].'</span></td>';
                                 $output .= '<td class="alt-col"><span';
-                                if($row[1] == $alt) {
+                                if($row[1] == makePoints($alt) ) {
                                     $output .= ' class="alt" ';
                                 }
                                 $output .= '>'.$row[1].'</span></td>';

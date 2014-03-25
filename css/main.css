@@ -101,21 +101,21 @@ body {
     background-image: url('../img/background.jpg');
     font-family:'Linotype Didot eText W01', "Times New Roman" Times, serif;
     font-weight: 400;
-    color: #444;
+    color: #564246;
 }
 .wrapper {
     width: 960px;
     margin: 0 auto;
     padding: 33px 53px;
-    background-color: #eee;
-    box-shadow: 0 4px 6px #ccc;
+    background-color: #F0EBE9;
+    box-shadow: 0 4px 6px #C6C0BB;
 }
 ul, li {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-h1, h2, h3, h4, h5, h6, th, legend, input[type="submit"] {
+h1, h2, h3, h4, h5, h6, th, legend, input[type="submit"], .base, .alt {
     font-family:'Linotype Didot eText W04', "Times New Roman" Times, serif;
     font-weight: 700;
 }
@@ -132,7 +132,7 @@ a:hover {
 }
 fieldset {
     padding: 21px;
-    border: 1px solid #ccc;
+    border: 1px solid #C6C0BB;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
@@ -151,7 +151,7 @@ form p {
     margin: 0;
 }
 input, select {
-    border: 1px solid #ccc;
+    border: 1px solid #C6C0BB;
     padding: 4px 3px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -162,13 +162,13 @@ input[type="submit"] {
     margin: 0 auto;
     padding: 4px 6px;
     text-align: center;
-    background-color: #444;
+    background-color: #564246;
     color: #eee;
-    border: 1px solid #444;
+    border: 1px solid #564246;
 }
 input[type="submit"]:hover {
-    border: 1px solid #555;
-    background-color: #555;
+    border: 1px solid #6A585A;
+    background-color: #6A585A;
 }
 table {
     margin: 26px auto;
@@ -177,19 +177,19 @@ table {
 th {
     width: 50%;
     font-size: 26px;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid #C6C0BB;
 }
 tr:nth-child(odd) td.base-col {
-    background-color: #eee;
+    background-color: #F0EBE9;
 }
 tr:nth-child(even) td.base-col {
-    background-color: #e5e5e5;
+    background-color: #E5E0DD;
 }
 tr:nth-child(odd) td.alt-col {
-    background-color: #e5e5e5;
+    background-color: #E5E0DD;
 }
 tr:nth-child(even) td.alt-col {
-    background-color: #eee;
+    background-color: #F0EBE9;
 }
 td,th {
     padding: 13px 20px;
@@ -199,7 +199,7 @@ td {
     font-style: italic;
 }
 footer {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #C6C0BB;
     padding: 16px 0;
 }
 
@@ -209,13 +209,17 @@ footer div {
     float: left;
 }
 
+.base, .alt {
+    color: #ca0d1b;
+}
+
 .base-col {
     text-align: right;
-    border-right: 1px solid #aaa;
+    border-right: 1px solid #A9A09A;
 }
 .alt-col {
     text-align: left;
-    border-left: 1px solid #aaa;
+    border-left: 1px solid #A9A09A;
 }
 
 
