@@ -24,6 +24,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
         <!-- Add your site or application content here -->
         <article class="wrapper">
             <h1>Modular Scale Calculator</h1>
@@ -56,24 +57,42 @@
                 <tr>
                     <th class="base-col">Base Scale</th>
                     <th class="alt-col">Alt Scale</th>
+                    <th class="em-col">Em Base</th>
+                    <th class="em-col">Em Alt</th>
                 </tr>
                 <tr>
                     <?php
                         if(isset($scale)) {
                             foreach($scale as $row) {
                                 $output = '<tr>';
+
                                 $output .= '<td class="base-col"><span';
-                                if($row[0] == $base) {
+                                if($row[0] == $basePoints) {
                                     $output .= ' class="base" ';
                                 }
                                 $output .= '>'.$row[0].'</span></td>';
+
                                 $output .= '<td class="alt-col"><span';
-                                if($row[1] == $alt || $row[1] == makePoints($alt)) {
+                                if($row[1] == $altPoints) {
                                     $output .= ' class="alt" ';
                                 }
                                 $output .= '>'.$row[1].'</span></td>';
+
+                                $output .= '<td class="em-col"><span';
+                                if($row[0] == $base) {
+                                    $output .= ' class="em" ';
+                                }
+                                $output .= '>'.round($row[0]/$basePoints,3).'</span></td>';
+
+                                $output .= '<td class="alt-col"><span';
+                                if($row[1] == $altPoints) {
+                                    $output .= ' class="alt" ';
+                                }
+                                $output .= '>'.round($row[1]/$basePoints,3).'</span></td>';
+
                                 $output .= '</tr>';
                                 echo $output;
+
                             }
                         }
                     ?>

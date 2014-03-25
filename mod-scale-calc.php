@@ -30,46 +30,50 @@ if(isset($_POST['submit'])) {
     $ratio = validate($_POST['ratio']);
 
     if (isPica($base)) {
-        $basePica = $base;
-        $base = makePoints($base);
+        $basePoints = makePoints($base);
+    } else {
+        $basePoints = $base;
     }
 
     if (isPica($alt)) {
-        $altPica = $alt;
-        $alt = makePoints($alt);
+        $altPoints = makePoints($alt);
+    } else {
+        $altPoints = $alt;
     }
 
 } else {
     $ratio = 1.618;
-    $base = 16;
-    $alt = 960;
+    $basePoints = 16;
+    $altPoints = 960;
+    $base = $basePoints;
+    $alt = $altPoints;
 }
 
-if($alt >= 1600) {
-    $max = $alt;
+if($altPoints >= 1600) {
+    $max = $altPoints;
 } else {
     $max = 1600;
 }
 
-$i=$base;
+$i=$basePoints;
 while ($i >= 1) {
     $baseScale[] =  round($i,1);
     $i = $i / $ratio;
 }
 $baseScale = array_reverse($baseScale);
-$i=$base;
+$i=$basePoints;
 while ($i <= $max) {
     $i = $i * $ratio;
     $baseScale[] =  round($i,1);
 }
 
-$i=$alt;
+$i=$altPoints;
 while ($i >= 1) {
     $altScale[] =  round($i,1);
     $i = $i / $ratio;
 }
 $altScale = array_reverse($altScale);
-$i=$alt;
+$i=$altPoints;
 while ($i <= $max) {
     $i = $i * $ratio;
     $altScale[] =  round($i,1);
@@ -81,11 +85,3 @@ $baseScale = new ArrayIterator($baseScale);
 $scale = new MultipleIterator();
 $scale->attachIterator($baseScale);
 $scale->attachIterator($altScale);
-
-if(isset($basePica)) {
-    $base = $basePica;
-}
-
-if(isset($altPica)) {
-    $alt = $altPica;
-}

@@ -115,7 +115,7 @@ ul, li {
     margin: 0;
     padding: 0;
 }
-h1, h2, h3, h4, h5, h6, th, legend, input[type="submit"], .base, .alt {
+h1, h2, h3, h4, h5, h6, th, legend, input[type="submit"], .base, .alt, .em {
     font-family:'Linotype Didot eText W04', "Times New Roman" Times, serif;
     font-weight: 700;
 }
@@ -175,14 +175,14 @@ table {
     min-width: 366px;
 }
 th {
-    width: 50%;
+    width: 25%;
     font-size: 26px;
     border-bottom: 2px solid #C6C0BB;
 }
-tr:nth-child(odd) td.base-col {
+tr:nth-child(odd) td.base-col, tr:nth-child(odd) td.em-col {
     background-color: #F0EBE9;
 }
-tr:nth-child(even) td.base-col {
+tr:nth-child(even) td.base-col, tr:nth-child(even) td.em-col {
     background-color: #E5E0DD;
 }
 tr:nth-child(odd) td.alt-col {
@@ -209,15 +209,15 @@ footer div {
     float: left;
 }
 
-.base, .alt {
+.base, .alt, .em {
     color: #ca0d1b;
 }
 
 .base-col {
-    text-align: right;
+    text-align: left;
     border-right: 1px solid #A9A09A;
 }
-.alt-col {
+.alt-col, .em-col {
     text-align: left;
     border-left: 1px solid #A9A09A;
 }
