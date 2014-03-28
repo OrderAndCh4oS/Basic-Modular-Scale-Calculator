@@ -22,6 +22,25 @@ function makePoints($data) {
     return $points;
 }
 
+function scaleRow($data, $points, $conversion = false, $emBase = false) {
+
+    $output = '<td class="col"><span';
+    if($data == $points) {
+        $output .= ' class="highlight" ';
+    }
+
+    if($conversion == 'ems') {
+        if(!$emBase) {
+            $data = round($data/$points,3);
+        } else {
+            $data = round($data/$emBase,3);
+        }
+    }
+
+    $output .= '>'.$data.'</span></td>';
+    return $output;
+}
+
 /* todo: Make sure entry is a valid number, maybe test for px, pt, p, ems etc and handle accordingly. */
 /* todo: Make calculations for ems and percent. */
 if(isset($_POST['submit'])) {
@@ -43,16 +62,16 @@ if(isset($_POST['submit'])) {
 
 } else {
     $ratio = 1.618;
-    $basePoints = 16;
-    $altPoints = 960;
+    $basePoints = 11;
+    $altPoints = 210;
     $base = $basePoints;
     $alt = $altPoints;
 }
 
-if($altPoints >= 1600) {
+if($altPoints >= 2400) {
     $max = $altPoints;
 } else {
-    $max = 1600;
+    $max = 2400;
 }
 
 $i=$basePoints;

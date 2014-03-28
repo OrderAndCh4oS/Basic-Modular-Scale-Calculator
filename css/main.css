@@ -115,7 +115,7 @@ ul, li {
     margin: 0;
     padding: 0;
 }
-h1, h2, h3, h4, h5, h6, th, legend, input[type="submit"], .base, .alt, .em {
+h1, h2, h3, h4, h5, h6, th, legend, input[type="submit"], .highlight {
     font-family:'Linotype Didot eText W04', "Times New Roman" Times, serif;
     font-weight: 700;
 }
@@ -171,30 +171,34 @@ input[type="submit"]:hover {
     background-color: #6A585A;
 }
 table {
+    width: 100%;
     margin: 26px auto;
     min-width: 366px;
 }
 th {
+    text-align: left;
     width: 25%;
     font-size: 26px;
     border-bottom: 2px solid #C6C0BB;
 }
-tr:nth-child(odd) td.base-col, tr:nth-child(odd) td.em-col {
+tr:nth-child(odd) td:nth-child(odd) {
     background-color: #F0EBE9;
 }
-tr:nth-child(even) td.base-col, tr:nth-child(even) td.em-col {
+tr:nth-child(even) td:nth-child(odd) {
     background-color: #E5E0DD;
 }
-tr:nth-child(odd) td.alt-col {
+tr:nth-child(odd) td:nth-child(even) {
     background-color: #E5E0DD;
 }
-tr:nth-child(even) td.alt-col {
+tr:nth-child(even) td:nth-child(even) {
     background-color: #F0EBE9;
 }
 td,th {
     padding: 13px 20px;
+    border-left: 1px solid #A9A09A;
 }
 td {
+    text-align: left;
     font-size: 21px;
     font-style: italic;
 }
@@ -209,18 +213,18 @@ footer div {
     float: left;
 }
 
-.base, .alt, .em {
+.highlight {
     color: #ca0d1b;
 }
 
-.base-col {
-    text-align: left;
-    border-right: 1px solid #A9A09A;
+.col {
+    width: 16.66667%;
 }
-.alt-col, .em-col {
-    text-align: left;
-    border-left: 1px solid #A9A09A;
+
+.col:first-of-type {
+    border-left: none;
 }
+
 
 
 

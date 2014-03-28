@@ -55,10 +55,12 @@
             </form>
             <table>
                 <tr>
-                    <th class="base-col">Base Scale</th>
-                    <th class="alt-col">Alt Scale</th>
-                    <th class="em-col">Em Base</th>
-                    <th class="em-col">Em Alt</th>
+                    <th class="col">Base</th>
+                    <th class="col">Alt</th>
+                    <th class="col">Em Base</th>
+                    <th class="col">Em Alt</th>
+                    <th class="col">@16 Base</th>
+                    <th class="col">@16 Alt</th>
                 </tr>
                 <tr>
                     <?php
@@ -66,30 +68,12 @@
                             foreach($scale as $row) {
                                 $output = '<tr>';
 
-                                $output .= '<td class="base-col"><span';
-                                if($row[0] == $basePoints) {
-                                    $output .= ' class="base" ';
-                                }
-                                $output .= '>'.$row[0].'</span></td>';
-
-                                $output .= '<td class="alt-col"><span';
-                                if($row[1] == $altPoints) {
-                                    $output .= ' class="alt" ';
-                                }
-                                $output .= '>'.$row[1].'</span></td>';
-
-                                $output .= '<td class="em-col"><span';
-                                if($row[0] == $base) {
-                                    $output .= ' class="em" ';
-                                }
-                                $output .= '>'.round($row[0]/$basePoints,3).'</span></td>';
-
-                                $output .= '<td class="alt-col"><span';
-                                if($row[1] == $altPoints) {
-                                    $output .= ' class="alt" ';
-                                }
-                                $output .= '>'.round($row[1]/$basePoints,3).'</span></td>';
-
+                                $output .= scaleRow($row[0], $basePoints);
+                                $output .= scaleRow($row[1], $altPoints);
+                                $output .= scaleRow($row[0], $basePoints, 'ems');
+                                $output .= scaleRow($row[1], $altPoints, 'ems', $basePoints);
+                                $output .= scaleRow($row[0], $basePoints, 'ems', 16);
+                                $output .= scaleRow($row[1], $altPoints, 'ems', 16);
                                 $output .= '</tr>';
                                 echo $output;
 
@@ -98,6 +82,7 @@
                     ?>
                 </tr>
             </table>
+
             <footer class="clearfix">
                 <div>
                     <h2>Built by</h2>
@@ -114,7 +99,8 @@
                     <h2>Further Resources</h2>
                     <ul>
                         <li><a href="http://alistapart.com/article/more-meaningful-typography">More Meaningful Typography</a></li>
-                        <li><a href="http://www.goodreads.com/book/show/44735.The_Elements_of_Typographic_Style">The Elements of Typographic Style</a> </li>
+                        <li><a href="http://alistapart.com/article/content-out-layout">Content Out Layout</a></li>
+                        <li><a href="http://www.goodreads.com/book/show/44735.The_Elements_of_Typographic_Style">The Elements of Typographic Style</a></li>
                     </ul>
                 </div>
             </footer>
