@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Modular Scale Calculator</title>
-        <meta name="description" content="A basic modular scale calculator for working out typographic rhythm. Designed and developed by Sean Cooper.">
+        <meta name="description" content="A modular scale calculator for working out double stranded scales to aid typographic rhythm.">
         <meta name="viewport" content="width=960px">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -28,11 +28,20 @@
         <!-- Add your site or application content here -->
         <article class="wrapper">
             <h1>Modular Scale Calculator</h1>
-            <form method="post" action="index.php">
+            <p class="large">A double stranded modular scale calculator for working out typographic rhythm.</p>
+            <form method="post" action="http://modular-scale.com/">
                 <fieldset>
                     <legend>Calculator</legend>
-                    <p><label for="base">Base Figure</label> <input id="base" name="base" type="text" value="<?php echo $base; ?>"></p>
-                    <p><label for="alt">Important Figure</label> <input id="alt" name="alt" type="text" value="<?php echo $alt; ?>"></p>
+                    <p class="input">
+                        <label for="base">Figure</label>
+                        <input id="base" name="base" type="text" value="<?php echo $base; ?>">
+                        <?php if(!empty($error['base'])) { echo "<span class='error-message'>{$error['base']}</span>"; } ?>
+                    </p>
+                    <p class="input">
+                        <label for="alt">Important Figure</label>
+                        <input id="alt" name="alt" type="text" value="<?php echo $alt; ?>">
+                        <?php if(!empty($error['alt'])) { echo "<span class='error-message'>{$error['alt']}</span>"; } ?>
+                    </p>
                     <p>
                         <label for="ratio">Ratio</label>
                         <select id="ratio" name="ratio">
@@ -44,7 +53,7 @@
                             <option value="1.414" <?php if($ratio == 1.414) echo "selected" ?>>1:&radic;2&#8201;&ndash;&#8201;aug. fourth / dim. fifth</option>
                             <option value="1.5" <?php if($ratio == 1.5) echo "selected" ?>>2:3&#8201;&ndash;&#8201;perfect fifth</option>
                             <option value="1.6" <?php if($ratio == 1.6) echo "selected" ?>>5:8&#8201;&ndash;&#8201;minor sixth</option>
-                            <option value="1.618" <?php if($ratio == 1.618) echo "selected" ?>>1:1.618&#8201;&ndash;&#8201;golden section</option>
+                            <option value="1.618" <?php if($ratio == 1.618 || !isset($scale)) echo "selected" ?>>1:1.618&#8201;&ndash;&#8201;golden section</option>
                             <option value="1.667" <?php if($ratio == 1.667) echo "selected" ?>>3:5&#8201;&ndash;&#8201;major sixth</option>
                             <option value="1.778" <?php if($ratio == 1.778) echo "selected" ?>>9:16&#8201;&ndash;&#8201;minor seventh</option>
                             <option value="1.875" <?php if($ratio == 1.875) echo "selected" ?>>8:15&#8201;&ndash;&#8201;major seventh</option>
@@ -53,6 +62,7 @@
                     <p class="submit"><input type="submit" name="submit" value="Submit"></p>
                 </fieldset>
             </form>
+            <?php if(isset($scale)) : ?>
             <table>
                 <tr>
                     <th class="col">Base</th>
@@ -64,10 +74,8 @@
                 </tr>
                 <tr>
                     <?php
-                        if(isset($scale)) {
                             foreach($scale as $row) {
                                 $output = '<tr>';
-
                                 $output .= scaleRow($row[0], $basePoints);
                                 $output .= scaleRow($row[1], $altPoints);
                                 $output .= scaleRow($row[0], $basePoints, 'ems');
@@ -78,11 +86,11 @@
                                 echo $output;
 
                             }
-                        }
+
                     ?>
                 </tr>
             </table>
-
+            <?php endif; ?>
             <footer class="clearfix">
                 <div>
                     <h2>Built by</h2>

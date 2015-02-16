@@ -116,12 +116,18 @@ ul, li {
     padding: 0;
 }
 h1, h2, h3, h4, h5, h6, th, legend, input[type="submit"], .highlight {
-    font-family:'Linotype Didot eText W04', "Times New Roman" Times, serif;
+    font-family:'Linotype Didot eText W04', "Times New Roman", Times, serif;
     font-weight: 700;
 }
 h1 {
     text-align: center;
     font-size: 67px;
+    margin-bottom: 20px;
+}
+p.large {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 33px;
 }
 a {
     color: #666;
@@ -142,6 +148,23 @@ legend {
     font-size: 26px;
     padding: 0 4px;
 }
+p.input {
+    position: relative;
+}
+.error-message {
+    position: absolute;
+    display: block;
+    bottom: -22px;
+    right: -13px;
+    font-family:'Linotype Didot eText W04', "Times New Roman", Times, serif;
+    font-weight: 700;
+    color: #ca0d1b;
+    background-color: #F0EBE9;
+    padding: 6px;
+    border: 1px solid #C6C0BB;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;}
 form p {
     display: inline-block;
     margin: 0 7px 26px;
@@ -204,6 +227,7 @@ td {
 }
 footer {
     border-top: 1px solid #C6C0BB;
+    margin-top: 16px;
     padding: 16px 0;
 }
 
