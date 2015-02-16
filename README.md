@@ -1,4 +1,4 @@
-Basic-Modular-Scale-Calculator
+Modular-Scale-Calculator
 ==============================
 
-A very basic modular scale calculator
+A modular scale calculator
