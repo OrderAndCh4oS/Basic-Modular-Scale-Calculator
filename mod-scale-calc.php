@@ -52,7 +52,7 @@ function scaleRow($data, $points, $conversion = false, $emBase = false)
             $data = round($data / $emBase, 3);
         }
     } else {
-        $data = round($data,3);
+        $data = round($data,2);
     }
 
     $output .= '>' . $data . '</span></td>';
