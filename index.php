@@ -29,7 +29,8 @@
 </p><![endif]--><!-- Add your site or application content here -->
 <article class="wrapper">
     <h1>Modular Scale Calculator</h1>
-    <p class="large">A double stranded modular scale calculator for working out typographic rhythm.</p>
+    <p class="large">A double stranded, modular scale calculator.<br> For designing pages and layouts with typographic rhythm.</p>
+    <p class="instructions">Figures can be entered as any straight value or as picas and points (<em>eg</em> 12p6 for 12 picas 6 points or 10pt for 10 points)</p>
     <form method="post" action="index.php">
         <fieldset>
             <legend>Calculator</legend>
@@ -112,7 +113,6 @@
             <h2>Built by</h2>
             <ul>
                 <li><a href="https://twitter.com/Sarkoma">@Sarkoma</a></li>
-                <li><a href="https://twitter.com/Sarkoma">@threeandme_</a></li>
             </ul>
         </div>
         <div>

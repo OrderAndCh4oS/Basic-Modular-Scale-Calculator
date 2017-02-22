@@ -135,6 +135,11 @@ p.large {
     margin-bottom: 33px;
 }
 
+p.instructions {
+    text-align: center;
+    font-size: 16px;
+}
+
 a {
     color: #666;
     text-decoration: none;
