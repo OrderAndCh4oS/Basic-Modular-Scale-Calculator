@@ -14,13 +14,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Modular Scale Calculator</title>
     <meta name="description" content="A basic modular scale calculator for working out typographic rhythm. Designed and developed by Sean Cooper.">
-    <meta name="viewport" content="width=960px">
+    <meta name="viewport" content="width=1024px">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="css/main.v1.css">
     <script type="text/javascript" src="http://fast.fonts.net/jsapi/d200305d-8416-404a-a388-46e78638340d.js"></script>
     <?php include_once( 'google-analytics.php' ); ?>
 </head>
@@ -134,5 +133,10 @@
         </div>
     </footer>
 </article>
+<div class="logo" style="position: fixed; bottom: 30px; right:30px;">
+    <a href="https://orderandchaoscreative.com">
+        <img src="img/oacc-logo-web.opt.svg" style="width: 180px; height: auto;">
+    </a>
+</div>
 </body>
 </html>

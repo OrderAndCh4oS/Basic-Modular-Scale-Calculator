@@ -30,12 +30,14 @@ html {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #000000;
+    color: #ffffff;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #000000;
+    color: #ffffff;
     text-shadow: none;
 }
 
@@ -233,7 +235,7 @@ th {
 }
 
 tr:nth-child(odd) td:nth-child(odd) {
-    background-color: #F0EBE9;
+    background-color: #f7f2f0;
 }
 
 tr:nth-child(even) td:nth-child(odd) {
@@ -245,7 +247,7 @@ tr:nth-child(odd) td:nth-child(even) {
 }
 
 tr:nth-child(even) td:nth-child(even) {
-    background-color: #F0EBE9;
+    background-color: #f7f2f0;
 }
 
 td, th {
