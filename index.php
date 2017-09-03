@@ -1,5 +1,6 @@
 <?php require_once( 'mod-scale-calc.php' ); ?>
 <!DOCTYPE html>
+<?php require_once ('oacc-ascii.php'); ?>
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>

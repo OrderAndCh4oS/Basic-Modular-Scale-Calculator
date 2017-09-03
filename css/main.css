@@ -98,18 +98,16 @@ textarea {
    ========================================================================== */
 
 body {
-    background-image: url('../img/background.jpg');
     font-family: 'Linotype Didot eText W01', "Times New Roman", Times, serif;
     font-weight: 400;
-    color: #564246;
+    color: #000;
+    background-color: gold;
 }
 
 .wrapper {
-    width: 960px;
+    width: 1024px;
     margin: 0 auto;
     padding: 33px 53px;
-    background-color: #F0EBE9;
-    box-shadow: 0 4px 6px #C6C0BB;
 }
 
 ul, li {
@@ -140,18 +138,23 @@ p.instructions {
     font-size: 16px;
 }
 
+#base, #alt {
+    width: 200px;
+}
+
 a {
-    color: #666;
+    color: #000;
     text-decoration: none;
 }
 
 a:hover {
+    color: blue;
     text-decoration: underline;
 }
 
 fieldset {
     padding: 21px;
-    border: 1px solid #C6C0BB;
+    border: 1px solid #000;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
@@ -174,10 +177,10 @@ p.input {
     right: -13px;
     font-family: 'Linotype Didot eText W04', "Times New Roman", Times, serif;
     font-weight: 700;
-    color: #ca0d1b;
+    color: #000;
     background-color: #F0EBE9;
     padding: 6px;
-    border: 1px solid #C6C0BB;
+    border: 1px solid #000;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
@@ -194,7 +197,7 @@ form p {
 }
 
 input, select {
-    border: 1px solid #C6C0BB;
+    border: 1px solid #000;
     padding: 4px 3px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -206,14 +209,14 @@ input[type="submit"] {
     margin: 0 auto;
     padding: 4px 6px;
     text-align: center;
-    background-color: #564246;
+    background-color: #000;
     color: #eee;
-    border: 1px solid #564246;
+    border: 1px solid #000;
 }
 
 input[type="submit"]:hover {
-    border: 1px solid #6A585A;
-    background-color: #6A585A;
+    border: 1px solid blue;
+    background-color: blue;
 }
 
 table {
@@ -226,7 +229,7 @@ th {
     text-align: left;
     width: 25%;
     font-size: 26px;
-    border-bottom: 2px solid #C6C0BB;
+    border-bottom: 2px solid #000;
 }
 
 tr:nth-child(odd) td:nth-child(odd) {
@@ -247,7 +250,7 @@ tr:nth-child(even) td:nth-child(even) {
 
 td, th {
     padding: 13px 20px;
-    border-left: 1px solid #A9A09A;
+    border-left: 1px solid #000;
 }
 
 td {
@@ -257,8 +260,8 @@ td {
 }
 
 footer {
-    border-top: 1px solid #C6C0BB;
-    border-bottom: 1px solid #C6C0BB;
+    border-top: 1px dotted #000;
+    border-bottom: 1px dotted #000;
     margin: 16px 0;
     padding: 16px 0;
 }
